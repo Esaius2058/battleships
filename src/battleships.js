@@ -31,7 +31,7 @@ class GameBoards {
     return board;
   };
 
-  placeShip = ([x1, y1], [x2, y2]) => {
+  placeShip = ([x1,y1], [x2,y2]) => {
     //Check if the ship is not placed horizontally or vertically
     if (x1 != x2 && y1 != y2) {
       throw new Error("Invalid ship placement");
@@ -42,7 +42,7 @@ class GameBoards {
       for (let j = Math.min(y1, y2); j <= Math.max(y1, y2); j++) {
         //Check if any of the grids is occupied
         if (this.board[x1][j] != null && this.board[x1][j] != "miss") {
-          return "Position is occupied";
+          throw new Error("Position is occupied");
         }
         this.board[x1][j] = "ship"; //Mark position as occupied
       }
@@ -57,19 +57,19 @@ class GameBoards {
         this.board[i][y1] = "ship"; //Mark position as occupied
       }
     }
-    let startCoords = [x1, y1];
-    let endCoords = [x2, y2];
+    let startCoords = [x1,y1];
+    let endCoords = [x2,y2];
     this.ships.push({ startCoords, endCoords });
   };
 
-  receiveAttack = (x, y) => {
+  receiveAttack = (x,y) => {
     //Check if the position on the board has a ship:
     if (this.board[x][y] == "ship") {
       this.board[x][y] = "hit";
-      return "Hit!";
+      return "Hit!\n";
     } else if (this.board[x][y] == null) {
       this.board[x][y] = "miss";
-      return "Miss!";
+      return "Miss!\n";
     } else {
       return "Already attacked this position!";
     }
@@ -77,8 +77,8 @@ class GameBoards {
 
   isAllShipsSunk = () => {
     for (let ship of this.ships) {
-      let [x1, y1] = ship.startCoords;
-      let [x2, y2] = ship.endCoords;
+      let [x1,y1] = ship.startCoords;
+      let [x2,y2] = ship.endCoords;
       let isSunk = true;
 
       //Check all ship coordinates for hit status
@@ -113,4 +113,4 @@ class Player {
   }
 }
 
-module.exports = { Ship, GameBoards, Player };
+export { Ship, GameBoards, Player };
