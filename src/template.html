@@ -1,11 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Battle Ships</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Battleship Game</h1>
+    </header>
+
+    <main>
+      <section class="board-section">
+        <button class="start-btn" id="start-btn">START</button>
+        <divider class="player-boards">
+          <div class="game-board hidden" id="player-board"></div>
+          <div class="game-board hidden" id="opp-board"></div>
+        </divider>
+      </section>
+
+      <section class="gaming-section">
+        <section class="ship-placement-section">
+          <h3>Place a Ship</h3>
+          <p>Enter the start and end coordinates (e.g., 0,0 to 0,2):</p>
+          <section class="input-section">
+            <input type="text" id="start-coord" placeholder="Start (x,y)" />
+            <input type="text" id="end-coord" placeholder="End (x,y)" />
+          </section>
+          <button id="place-ship">Place Ship</button>
+        </section>
+
+        <section class="attack-section">
+          <h3>Attack a Ship</h3>
+          <p>Enter the coordinates to attack (e.g., 0,0):</p>
+          <section class="input-section">
+            <input type="text" id="attack-coord" placeholder="Attack (x,y)" />
+          </section>
+          <button id="attack-ship">Attack</button>
+        </section>
+      </section>
+
+      <section class="messages-section">
+        <h3>Game Messages</h3>
+        <div id="messages"></div>
+      </section>
+
+      <section class="logs-section">
+        <button id="logs-btn" value="Ship Logs">Ship Logs</button>
+        <div class="ship-logs hidden" id="ship-logs"></div>
+      </section>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 1.2rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.board-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player-boards{
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(7, 50px);
+  grid-template-rows: repeat(7, 50px);
+  width: 47%;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: lightblue;
+  border: 1px solid #000;
+  text-align: center;
+  line-height: 50px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.hit {
+  background-color: red;
+}
+
+.miss {
+  background-color: lightgray;
+}
+
+.hidden {
+  display: none;
+}
+
+h3 {
+  margin-bottom: 3px;
+  margin: 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.gaming-section{
+  display: flex;
+  flex-flow: rowx;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 1rem;
+}
+
+.ship-placement-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  border: 1px solid black;
+  border-radius: 0.4rem;
+  text-align: center;
+  height: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.input-section {
+  margin-bottom: 0.5rem;
+}
+
+.attack-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  height: 2rem;
+  width: 5rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  cursor: pointer;
+}
+
+.messages-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logs-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
